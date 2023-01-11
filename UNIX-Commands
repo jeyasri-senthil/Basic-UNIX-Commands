@@ -1,0 +1,218 @@
+BASIC UNIX COMMANDS
+
+localhost:~# cal 1 2023
+    January 2023
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+29 30 31
+
+g21cs068@cloudshell:~ $ date +%m   # to display the month
+01
+
+g21cs068@cloudshell:~ $ date +%h   # to display the name of the month
+Jan
+
+g21cs068@cloudshell:~ $ date +%d   # to display the day
+11
+
+g21cs068@cloudshell:~ $ date +%y   # to display the last two digits of the year
+23
+
+g21cs068@cloudshell:~ $ date +%H   # to display hours
+12
+
+g21cs068@cloudshell:~ $ date +%M   # to display minutes
+59
+
+g21cs068@cloudshell:~ $ date +%S   # to display seconds
+35
+
+g21cs068@cloudshell:~ $ echo JEYASRI   # used to print the message on the screen
+JEYASRI
+
+localhost:~# $man cat   # used to provide manual help on UNIX commands
+HEY JEYASRI!
+HEY JEYASRI!
+
+g21cs068@cloudshell:~ $ ls -s   # to list the files in the directory by their size
+total 4
+4 README-cloudshell.txt
+
+g21cs068@cloudshell:~ $ ls -t   # order by creation time
+README-cloudshell.txt
+
+g21cs068@cloudshell:~ $ ls -u   # sort by access time
+README-cloudshell.txt
+
+g21cs068@cloudshell:~ $ ls -r   # reverse order
+README-cloudshell.txt
+
+g21cs068@cloudshell:~ $ ls -F   # adds / at the end of the directory
+README-cloudshell.txt
+
+g21cs068@cloudshell:~ $ ls -lh   # shows size in KiloBytes or MegaBytes
+total 4.0K
+-rw-r--r-- 1 g21cs068 g21cs068 913 Jan 11 12:55 README-cloudshell.txt
+
+localhost:~# ls -s   # to list the files in a directory
+total 16
+     4 bench.py       4 hello.c        4 hello.js       4 readme.txt
+     
+localhost:~# ls -t   # order by creation time
+readme.txt  bench.py    hello.c     hello.js
+
+localhost:~# ls -u   # sort by access
+readme.txt  bench.py    hello.c     hello.js
+
+localhost:~# ls -r   # reverse order
+readme.txt  hello.js    hello.c     bench.py
+
+localhost:~# ls -F   # adds / at the end of the directory
+bench.py    hello.c     hello.js    readme.txt
+
+localhost:~# ls -lh   # shows size in KiloBytes and Megabytes
+total 16K
+-rw-r--r--    1 root     root         114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root          76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root          22 Jun 26  2020 hello.js
+-rw-r--r--    1 root     root         151 Jul  5  2020 readme.txt
+
+localhost:~# ls [a-e]*   # list all the files whose name starts with a to e.
+bench.py
+
+localhost:~# ls [h]*   # list the files whose name starts with 'H' or 'h'
+hello.c   hello.js
+
+g21cs068@cloudshell:~ $ who   # displays the data about all users logged into the system currently
+g21cs068 pts/0        2023-01-11 12:55 (127.0.0.1)
+g21cs068 pts/1        2023-01-11 12:50 (127.0.0.1)
+g21cs068 pts/2        2023-01-11 12:55 (127.0.0.1)
+g21cs068 pts/3        2023-01-11 12:55 (tmux(668).%0)
+g21cs068 pts/4        2023-01-11 12:55 (tmux(668).%2)
+
+g21cs068@cloudshell:~ $ whoami   # displays the current user
+g21cs068
+
+g21cs068@cloudshell:~ $ uptime   # displays how long the system has been running since its last reboot or power off
+ 13:28:46 up 54 min,  5 users,  load average: 0.26, 0.73, 0.74
+
+g21cs068@cloudshell:~ $ uname -a # displays the system information such as Hardware platform, System name, Processor, OS type
+Linux cs-836835309248-default 5.15.65+ #1 SMP Sat Dec 10 10:12:26 UTC 2022 x86_64 GNU/Linux
+
+g21cs068@cloudshell:~ $ hostname   # displays and set system hostname
+cs-836835309248-default
+
+localhost:~# # getting input from the user
+localhost:~# read person
+JEYASRI!
+localhost:~# echo $person
+JEYASRI!
+localhost:~# echo Hello $person
+Hello JEYASRI!
+
+localhost:~# # bc - Best Calculator operations
+localhost:~# bc
+
+10/2*5
+25
+ 
+10/2*3
+15
+ 
+scale=1
+2.25+scale
+3.25
+ 
+sqrt(144)
+12.0
+ 
+for(i=0;i<5;i++)
+i
+0
+1
+2
+3
+4
+ 
+File Manupulation Commands
+localhost:~# cat>RollNo
+21CS068
+21CS045
+21CS054
+
+localhost:~# cat>Names
+Jeyasri S
+Gaayathri K R
+Harini M
+# cat>filename - used to create, view and concatenate files
+
+localhost:~# cat>>RollNo   # add to an existing file
+21CS014
+
+localhost:~# grep 21CS045 RollNo   # used to search a word in a file
+21CS045
+
+localhost:~# grep 21CS014 RollNo
+21CS014
+
+localhost:~# grep 21CS003 RollNo
+localhost:~# # no such word exists, so there is no output response.
+
+localhost:~# rm RollNo   # used to delete a file from the filesystem
+
+localhost:~# touch   # used to create blank file
+BusyBox v1.31.1 () multi-call binary.
+Usage: touch [-c] [-d DATE] [-t DATE] [-r FILE] FILE...
+Update the last-modified date on the given FILE[s]
+        -c      Don't create files
+        -h      Don't follow links
+        -d DT   Date/time to use
+        -t DT   Date/time to use
+        -r FILE Use FILE's date/time
+        
+localhost:~# cp   # copies the file or directory
+BusyBox v1.31.1 () multi-call binary.
+Usage: cp [OPTIONS] SOURCE... DEST
+Copy SOURCE(s) to DEST
+        -a      Same as -dpR
+        -R,-r   Recurse
+        -d,-P   Preserve symlinks (default if -R)
+        -L      Follow all symlinks
+        -H      Follow symlinks on command line
+        -p      Preserve file attributes if possible
+        -f      Overwrite
+        -i      Prompt before overwrite
+        -l,-s   Create (sym)links
+        -T      Treat DEST as a normal file
+        -u      Copy only newer files
+        
+localhost:~# mv   # used to rename the file or directory
+BusyBox v1.31.1 () multi-call binary.
+Usage: mv [-fin] SOURCE DEST
+or: mv [-fin] SOURCE... DIRECTORY
+Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY
+        -f      Don't prompt before overwriting
+        -i      Interactive, prompt before overwrite
+        -n      Don't overwrite an existing file
+        
+localhost:~# head Names   # used to display the top 10 lines of the file
+Jeyasri S
+Gaayathri K R
+Harini M
+# cat>filename - used to create, view and concatenate files
+
+localhost:~# tail -2 Names    # to display tail of the file
+Harini M
+# cat>filename - used to create, view and concatenate files
+
+localhost:~# # wc - counts the number of words, letters and characters
+
+localhost:~# wc -w Names
+17 Names
+localhost:~# wc -l Names
+4 Names
+localhost:~# wc -c Names
+93 Names
