@@ -2,7 +2,7 @@
 
 *This repository contains a collection of basic UNIX commands for various operations. These commands provide essential functionalities for working with the UNIX operating system. Below is a list of the supported commands and their functionalities. This work is done as a part of the academic OS Laboratory experiment.*
 
-### Supported Commands
+### ***Supported Commands***
 
 ***Display Calendar***: *This command allows you to view the current calendar.*
 
